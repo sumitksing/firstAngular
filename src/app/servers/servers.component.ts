@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class ServersComponent {
   allowUsers: boolean = false;
   serverStatus: string = 'No server is added.'
-  serverName: string = ''
+  serverName: string = 'TestServer'
 
   constructor() {
     setTimeout(() => {
@@ -21,7 +21,7 @@ export class ServersComponent {
   }
 
   onAddServer(event: Event) {
-    this.serverStatus = 'A server has been added';
+    this.serverStatus = 'A server has been added!! And the name of server is ' + this.serverName;
     // console.log(event)
   }
 
