@@ -9,6 +9,7 @@ export class ServersComponent {
   allowUsers: boolean = false;
   serverStatus: string = 'No server is added.'
   serverName: string = 'TestServer'
+  username: string = 'Jhon Doe'
 
   constructor() {
     setTimeout(() => {
@@ -28,5 +29,16 @@ export class ServersComponent {
   onUpdateServer(event: Event) {
     // console.log(event)
     this.serverName = (<HTMLInputElement>event.target).value
+  }
+
+  isEmptyString() {
+    if(this.username.trim() === ''){
+      return true;
+    }
+    return false;
+  }
+
+  onReset() {
+    this.username = ''
   }
 }
