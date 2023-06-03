@@ -22,11 +22,11 @@ export class ServersComponent {
 
   onAddServer(event: Event) {
     this.serverStatus = 'A server has been added';
-    console.log(event)
+    // console.log(event)
   }
 
   onUpdateServer(event: Event) {
-    console.log(event)
+    // console.log(event)
     this.serverName = (<HTMLInputElement>event.target).value
   }
 }
