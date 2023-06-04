@@ -10,6 +10,7 @@ export class ServersComponent {
   serverStatus: string = 'No server is added.'
   serverName: string = 'TestServer'
   serverCreated: boolean = false
+  servers: string[] = ['sever_leap', 'test_server', 'test_server2']
 
   constructor() {
     setTimeout(() => {
@@ -23,6 +24,7 @@ export class ServersComponent {
 
   onAddServer(event: Event) {
     this.serverCreated = true
+    this.servers.push(this.serverName)
     this.serverStatus = 'A server has been added!! And the name of server is ' + this.serverName;
     // console.log(event)
   }
