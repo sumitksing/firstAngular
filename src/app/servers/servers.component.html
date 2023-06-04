@@ -9,5 +9,9 @@ class ="form-control"
 <ng-template #noServer>
   <p>No server was created</p>
 </ng-template> -->
+<button class="btn btn-primary"(click)="onDisplayDetails($event)">Display Details</button>
+<p *ngIf="showPassword">Secret Password = tuna</p>
+<!-- <p *ngFor="let click of clicks" [ngStyle]="{backgroundColor: getColor()}" [ngClass]="{clickLog: clickCount>4}">click log: {{ click }} </p> -->
+<div *ngFor="let click of clicks; let i = index" [ngStyle]="{backgroundColor: getColor(i)}" [ngClass]="{clickLog: i>4}">click log: {{ click }} </div>
 
 <app-server *ngFor="let server of servers"></app-server>

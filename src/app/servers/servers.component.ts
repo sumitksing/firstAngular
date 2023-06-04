@@ -11,6 +11,9 @@ export class ServersComponent {
   serverName: string = 'TestServer'
   serverCreated: boolean = false
   servers: string[] = ['sever_leap', 'test_server', 'test_server2']
+  showPassword: boolean = false
+  clicks: any[] = []
+  clickCount: number = 0
 
   constructor() {
     setTimeout(() => {
@@ -32,5 +35,15 @@ export class ServersComponent {
   onUpdateServer(event: Event) {
     // console.log(event)
     this.serverName = (<HTMLInputElement>event.target).value
+  }
+
+  onDisplayDetails(event: Event) {
+    this.clickCount++
+    this.clicks.push(new Date)
+    this.showPassword = !this.showPassword
+  }
+
+  getColor(click) {
+    return click > 4 ? 'blue': ''
   }
 }
